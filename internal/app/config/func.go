@@ -40,7 +40,7 @@ func SetDeviceConfig() (err error) {
 
 	err = yaml.Unmarshal(f, &c)
 	if err != nil {
-		logger.Error("无法解析配置文件或损坏的客户端配置文件", zap.Error(err))
+		logger.Error("无法解析配置文件或损坏的设备配置文件", zap.Error(err))
 		return
 	}
 
