@@ -8,7 +8,7 @@ import (
 	"io/ioutil"
 )
 
-// GetClientConfig 获取配置
+// GetClientConfig 获取客户端配置
 func GetClientConfig() (conf *Client, err error) {
 
 	f, err := ioutil.ReadFile(".konoe/config.yml")
@@ -17,7 +17,7 @@ func GetClientConfig() (conf *Client, err error) {
 		return nil, err
 	}
 
-	err = yaml.Unmarshal(f, conf)
+	err = yaml.Unmarshal(f, &conf)
 	if err != nil {
 		logger.Error("无法解析配置文件或损坏的配置文件", zap.Error(err))
 		return nil, err
