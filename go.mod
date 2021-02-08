@@ -7,4 +7,5 @@ require (
 	github.com/robfig/cron/v3 v3.0.1
 	go.uber.org/zap v1.16.0
 	gopkg.in/natefinch/lumberjack.v2 v2.0.0
+	gopkg.in/yaml.v2 v2.2.2
 )
