@@ -38,7 +38,7 @@ func GetClientConfig() (c *Client, err error) {
 	return
 }
 
-// SetDeviceConfig 设置设备配置
+// SetDeviceConfig 设置设备配置。
 func SetDeviceConfig() (err error) {
 
 	var c *Device
@@ -59,7 +59,7 @@ func SetDeviceConfig() (err error) {
 	return
 }
 
-// setDeviceConfig 设置设备配置
+// setDeviceConfig 设置设备配置。
 func setDeviceConfig(c *Device) {
 	client.SystemDeviceInfo.Protocol = client.AndroidPhone
 

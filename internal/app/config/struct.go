@@ -1,13 +1,13 @@
 package config
 
 type (
-	// Client 客户端
+	// Client 客户端。
 	Client struct {
 		Number   uint64 `yaml:"number"`   // 号码
 		Password string `yaml:"password"` // 密码
 	}
 
-	// Device 设备
+	// Device 设备。
 	Device struct {
 		Display     string `yaml:"display"`     // 显示
 		Model       string `yaml:"model"`       // 型号
