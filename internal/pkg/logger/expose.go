@@ -1,6 +1,10 @@
 package logger
 
-import "go.uber.org/zap"
+import (
+	"log"
+
+	"go.uber.org/zap"
+)
 
 // Debug logs a message at DebugLevel. The message includes any fields passed
 // at the log site, as well as any fields accumulated on the logger.
@@ -12,18 +16,27 @@ func Info(msg string, fields ...zap.Field) { logger.Info(msg, fields...) }
 
 // Warn logs a message at WarnLevel. The message includes any fields passed
 // at the log site, as well as any fields accumulated on the logger.
-func Warn(msg string, fields ...zap.Field) { logger.Warn(msg, fields...) }
+func Warn(msg string, fields ...zap.Field) {
+	log.Println("Konoe Warn: ", msg)
+	logger.Warn(msg, fields...)
+}
 
 // Error logs a message at ErrorLevel. The message includes any fields passed
 // at the log site, as well as any fields accumulated on the logger.
-func Error(msg string, fields ...zap.Field) { logger.Error(msg, fields...) }
+func Error(msg string, fields ...zap.Field) {
+	log.Println("Konoe Error: ", msg)
+	logger.Error(msg, fields...)
+}
 
 // Fatal logs a message at FatalLevel. The message includes any fields passed
 // at the log site, as well as any fields accumulated on the logger.
 //
 // The logger then calls os.Exit(1), even if logging at FatalLevel is
 // disabled.
-func Fatal(msg string, fields ...zap.Field) { logger.Fatal(msg, fields...) }
+func Fatal(msg string, fields ...zap.Field) {
+	log.Println("Konoe Fatal: ", msg)
+	logger.Fatal(msg, fields...)
+}
 
 // DPanic logs a message at DPanicLevel. The message includes any fields
 // passed at the log site, as well as any fields accumulated on the logger.
@@ -31,13 +44,19 @@ func Fatal(msg string, fields ...zap.Field) { logger.Fatal(msg, fields...) }
 // If the logger is in development mode, it then panics (DPanic means
 // "development panic"). This is useful for catching errors that are
 // recoverable, but shouldn't ever happen.
-func DPanic(msg string, fields ...zap.Field) { logger.DPanic(msg, fields...) }
+func DPanic(msg string, fields ...zap.Field) {
+	log.Println("Konoe DPanic: ", msg)
+	logger.DPanic(msg, fields...)
+}
 
 // Panic logs a message at PanicLevel. The message includes any fields passed
 // at the log site, as well as any fields accumulated on the logger.
 //
 // The logger then panics, even if logging at PanicLevel is disabled.
-func Panic(msg string, fields ...zap.Field) { logger.Panic(msg, fields...) }
+func Panic(msg string, fields ...zap.Field) {
+	log.Println("Konoe Panic: ", msg)
+	logger.Panic(msg, fields...)
+}
 
 // Named adds a new path segment to the logger's name. Segments are joined by
 // periods. By default, Loggers are unnamed.
