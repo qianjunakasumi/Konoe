@@ -9,7 +9,18 @@ import (
 	"io/ioutil"
 )
 
-// GetClientConfig 获取客户端配置
+// LoadConfig 加载配置。
+func LoadConfig() (c *Client, err error) {
+	c, err = GetClientConfig()
+	if err != nil {
+		return
+	}
+
+	err = SetDeviceConfig()
+	return
+}
+
+// GetClientConfig 获取客户端配置。
 func GetClientConfig() (c *Client, err error) {
 
 	f, err := ioutil.ReadFile(".konoe/config.yml")
