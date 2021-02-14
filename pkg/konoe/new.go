@@ -1,11 +1,11 @@
 package konoe
 
 import (
-	"go.uber.org/zap"
-
-	"github.com/Mrs4s/MiraiGo/client"
 	"github.com/qianjunakasumi/Konoe/internal/app/config"
 	"github.com/qianjunakasumi/Konoe/internal/pkg/logger"
+
+	"github.com/Mrs4s/MiraiGo/client"
+	"go.uber.org/zap"
 )
 
 // Konoe 近江。
@@ -18,12 +18,7 @@ func New() (k *Konoe, err error) {
 
 	logger.Init()
 
-	c, err := config.GetClientConfig()
-	if err != nil {
-		return
-	}
-
-	err = config.SetDeviceConfig()
+	c, err := config.LoadConfig()
 	if err != nil {
 		return
 	}
