@@ -19,7 +19,6 @@ type (
 		Kernel      string `yaml:"kernel"`      // 内核版本
 		SIM         string `yaml:"sim"`         // 运营商信息
 		MAC         string `yaml:"mac"`         // MAC 地址
-		IP          string `yaml:"ip"`          // IP 地址
 		IMEI        string `yaml:"imei"`        // IMEI
 	}
 )

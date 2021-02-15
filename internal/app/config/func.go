@@ -74,6 +74,5 @@ func setDeviceConfig(c *Device) {
 	client.SystemDeviceInfo.ProcVersion = []byte(c.Kernel)
 	client.SystemDeviceInfo.SimInfo = []byte(c.SIM)
 	client.SystemDeviceInfo.MacAddress = []byte(c.MAC)
-	client.SystemDeviceInfo.IpAddress = []byte(c.IP)
 	client.SystemDeviceInfo.IMEI = c.IMEI
 }
